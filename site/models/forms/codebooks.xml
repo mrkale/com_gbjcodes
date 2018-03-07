@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+@package    Joomla.Component
+@copyright  (c) 2017 Libor Gabaj. All rights reserved.
+@license    GNU General Public License version 2 or later. See LICENSE.txt, LICENSE.php.
+@since      3.7
+-->
+<form>
+    <fieldset name="gridfields">
+
+        <!-- The first field here is considered as a default search field. -->
+        <!-- Defaul type for searching is string. -->
+        <field
+            name="title"
+            label="COM_GBJCODES_FIELD_CODEBOOK_TITLE_LABEL"
+            labelclass="title"
+            class="title"
+        />
+
+        <field
+            name="alias"
+            label="COM_GBJCODES_FIELD_CODEBOOK_ALIAS_LABEL"
+        />
+
+        <field
+            name="codes"
+            type="number"
+            label="COM_GBJCODES_FIELD_CODEBOOK_CODES_LABEL"
+            labelclass="center"
+            class="center"
+        />
+
+        <field
+            name="grid_site"
+            type="subform"
+        />
+
+    </fieldset>
+</form>

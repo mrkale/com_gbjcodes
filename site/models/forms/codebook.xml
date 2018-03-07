@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+@package    Joomla.Component
+@copyright  (c) 2017 Libor Gabaj. All rights reserved.
+@license    GNU General Public License version 2 or later. See LICENSE.txt, LICENSE.php.
+@since      3.7
+-->
+<form>
+    <fieldset name="gridfields">
+
+        <field
+            name="alias"
+            label="COM_GBJCODES_FIELD_CODEBOOK_ALIAS_LABEL"
+        />
+
+        <field
+            name="codes"
+            label="COM_GBJCODES_FIELD_CODEBOOK_CODES_LABEL"
+        />
+
+        <field
+            name="update_site"
+            type="subform"
+        />
+
+    </fieldset>
+</form>

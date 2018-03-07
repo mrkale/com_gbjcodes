@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+@package    Joomla.Component
+@copyright  (c) 2017 Libor Gabaj. All rights reserved.
+@license    GNU General Public License version 2 or later. See LICENSE.txt, LICENSE.php.
+@since      3.7
+-->
+<form>
+    <fieldset name="recordfields">
+
+        <field
+            name="title"
+            type="text"
+            class="input-xxlarge input-large-text"
+            label="JGLOBAL_TITLE"
+            description="COM_GBJCODES_FIELD_CODE_TITLE_DESC"
+            size="60"
+            required="true"
+        />
+
+        <field
+            name="alias"
+            type="text"
+            class="inputbox"
+            label="COM_GBJCODES_FIELD_CODE_ALIAS_LABEL"
+            description="COM_GBJCODES_FIELD_CODE_ALIAS_DESC"
+            size="30"
+        />
+
+        <field
+            name="update_admin"
+            type="subform"
+        />
+
+    </fieldset>
+</form>
