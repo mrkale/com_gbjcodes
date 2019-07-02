@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!--
 @package    Joomla.Component
-@copyright  (c) 2017 Libor Gabaj. All rights reserved.
-@license    GNU General Public License version 2 or later. See LICENSE.txt, LICENSE.php.
-@since      3.7
+@copyright  (c) 2017-2018 Libor Gabaj
+@license    GNU General Public License version 2 or later; see LICENSE.txt
+@since      3.8
 -->
 <form>
     <fieldset name="gridfields">
@@ -12,14 +12,14 @@
         <!-- Defaul type for searching is string. -->
         <field
             name="title"
-            label="COM_GBJCODES_FIELD_CODE_TITLE_LABEL"
+            label="LIB_GBJ_FIELD_TITLE_LABEL"
             labelclass="title"
             class="gbjcodes_title"
         />
 
         <field
             name="alias"
-            label="COM_GBJCODES_FIELD_CODE_ALIAS_LABEL"
+            label="LIB_GBJ_FIELD_ALIAS_LABEL"
         />
 
         <field

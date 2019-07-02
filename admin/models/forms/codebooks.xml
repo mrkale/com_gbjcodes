@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!--
 @package    Joomla.Component
-@copyright  (c) 2017 Libor Gabaj. All rights reserved.
-@license    GNU General Public License version 2 or later. See LICENSE.txt, LICENSE.php.
-@since      3.7
+@copyright  (c) 2017-2019 Libor Gabaj
+@license    GNU General Public License version 2 or later; see LICENSE.txt
+@since      3.8
 -->
 <form>
     <fieldset name="gridfields">
 
         <!-- The first field here is considered as a default search field. -->
-        <!-- Defaul type for searching is string. -->
+        <!-- Default type for searching is string. -->
         <field
             name="title"
             type="string"
-            label="COM_GBJCODES_FIELD_CODEBOOK_TITLE_LABEL"
+            label="LIB_GBJ_FIELD_TITLE_LABEL"
             labelclass="title"
             class="has-context"
         />
@@ -31,7 +31,8 @@
             label="COM_GBJCODES_FIELD_CODEBOOK_CODES_LABEL"
             labelclass="center"
             class="center"
-            default="JNONE"
+            default="LIB_GBJ_SELECT_NONE"
+            variants="#,_arch,_total"
         />
 
         <field

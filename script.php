@@ -1,9 +1,9 @@
 <?php
 /**
  * @package    Joomla.Component
- * @copyright  (c) 2017 Libor Gabaj. All rights reserved.
- * @license    GNU General Public License version 2 or later. See LICENSE.txt, LICENSE.php.
- * @since      3.7
+ * @copyright  (c) 2017-2018 Libor Gabaj
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @since      3.8
  */
 
 // No direct access
@@ -12,77 +12,27 @@ defined('_JEXEC') or die;
 /**
  * Installation script for component COM_GBJCODES
  *
- * @since  3.7
+ * @since  3.8
  */
 class Com_GbjcodesInstallerScript
 {
 	/**
-	 * Actions at installing the component
-	 *
-	 * @param   object  $parent  Installer object
-	 *
-	 * @return  none
-	 */
-	public function install($parent)
-	{
-		echo '<p>' . JText::_('COM_GBJCODES_INSTALL_TEXT') . '</p>';
-	}
-
-	/**
 	 * Actions at uninstalling the component
 	 *
-	 * @param   object  $parent  Installer object
+	 * @param   jadapterinstance  $adapter  Installer object
 	 *
-	 * @return  none
+	 * @return  void
 	 */
-	public function uninstall($parent)
+	public function uninstall(jadapterinstance $adapter)
 	{
 		include_once 'helpers/main.php';
 		$this->uninstallTables();
 	}
 
 	/**
-	 * Actions at updating the component
-	 *
-	 * @param   object  $parent  Installer object
-	 *
-	 * @return  none
-	 */
-	public function update($parent)
-	{
-//		echo '<p>' . JText::_('COM_GBJCODES_UPDATE_TEXT') . '</p>';
-	}
-
-	/**
-	 * Actions before installing the component
-	 *
-	 * @param   string  $type    Type of action (DISCOVER, INSTALL, UNINSTALL, UPDATE)
-	 * @param   object  $parent  Installer object
-	 *
-	 * @return  none
-	 */
-	public function preflight($type, $parent)
-	{
-//		echo '<p>' . JText::_('COM_GBJCODES_PREFLIGHT_' . strtoupper($type) . '_TEXT') . '</p>';
-	}
-
-	/**
-	 * Actions after installing the component
-	 *
-	 * @param   string  $type    Type of action (DISCOVER, INSTALL, UNINSTALL, UPDATE)
-	 * @param   object  $parent  Installer object
-	 *
-	 * @return  none
-	 */
-	public function postflight($type, $parent)
-	{
-//		echo '<p>' . JText::_('COM_GBJCODES_POSTFLIGHT_' . strtoupper($type) . '_TEXT') . '</p>';
-	}
-
-	/**
 	 * Uninstall tables of codelists registered in the codebook repository
 	 *
-	 * @return  none
+	 * @return  void
 	 */
 	private function uninstallTables()
 	{

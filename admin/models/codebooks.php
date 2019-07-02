@@ -1,9 +1,9 @@
 <?php
 /**
  * @package    Joomla.Component
- * @copyright  (c) 2017 Libor Gabaj. All rights reserved.
- * @license    GNU General Public License version 2 or later. See LICENSE.txt, LICENSE.php.
- * @since      3.7
+ * @copyright  (c) 2017-2019 Libor Gabaj
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @since      3.8
  */
 
 // No direct access
@@ -12,7 +12,7 @@ defined('_JEXEC') or die;
 /**
  * Methods handling list of codebooks.
  *
- * @since  3.7
+ * @since  3.8
  */
 class GbjcodesModelCodebooks extends GbjSeedModelList
 {
@@ -22,20 +22,6 @@ class GbjcodesModelCodebooks extends GbjSeedModelList
 	 * @var  object
 	 */
 	protected $statQueryCodes;
-
-	/**
-	 * Method to set the default sorting parameters
-	 *
-	 * @param   string  $ordering   An optional ordering field.
-	 * @param   string  $direction  An optional direction (asc|desc).
-	 *
-	 * @return  void
-	 */
-	protected function populateState($ordering = null, $direction = null)
-	{
-		$this->setFilterState('codes', 'uint');
-		parent::populateState($ordering, $direction);
-	}
 
 	/**
 	 * Retrieve list of records from database.
@@ -51,11 +37,8 @@ class GbjcodesModelCodebooks extends GbjSeedModelList
 		// Filter by existing code tables
 		if ($app->isClient('site'))
 		{
-			$query->where($db->quoteName('codes_total') . ' IS NOT NULL');
+			$query->where($db->quoteName('codes_total') . 'IS NOT NULL');
 		}
-
-		// Filter by Codes
-		$this->setFilterQuerySome('codes', $query);
 
 		return $query;
 	}
@@ -64,11 +47,14 @@ class GbjcodesModelCodebooks extends GbjSeedModelList
 	 * Extend and amend input query with sub queries, etc.
 	 *
 	 * @param   object  $query       Query to be extended inserted by reference.
+	 * @param   array   $codeFields  List of coded fields.
 	 *
 	 * @return  void  The extended query for chaining.
 	 */
-	protected function extendQuery($query)
+	protected function extendQuery($query, $codeFields = array())
 	{
+		$db	= $this->getDbo();
+
 		// Extend query with statistics of codes
 		$this->getStatQueryCodes();
 
@@ -79,13 +65,22 @@ class GbjcodesModelCodebooks extends GbjSeedModelList
 				->select('COALESCE(sc.codes, 0) AS codes')
 				->leftJoin('(' . $this->statQueryCodes . ') sc ON sc.id = a.id AND sc.state = ' . Helper::COMMON_STATE_PUBLISHED);
 
+			// Add archived codes
+			$query
+				->select('COALESCE(ac.codes, 0) AS codes_arch')
+				->leftJoin('(' . $this->statQueryCodes . ') ac ON ac.id = a.id AND ac.state = ' . Helper::COMMON_STATE_ARCHIVED);
+
 			// Add total codes. Allow null value for not existing code table.
 			$query
-				->select('tc.codes AS codes_total')
+				->select('COALESCE(tc.codes, 0) AS codes_total')
 				->leftJoin('(' . $this->statQueryCodes . ') tc ON tc.id = a.id AND tc.state = ' . Helper::COMMON_STATE_TOTAL);
 		}
+		else
+		{
+			$query->select('null AS codes, null AS codes_arch, null AS codes_total');
+		}
 
-		return parent::extendQuery($query);
+		return parent::extendQuery($query, $codeFields);
 	}
 
 	/**

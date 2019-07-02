@@ -1,18 +1,20 @@
 <?php
 /**
  * @package    Joomla.Component
- * @copyright  (c) 2017 Libor Gabaj. All rights reserved.
- * @license    GNU General Public License version 2 or later. See LICENSE.txt, LICENSE.php.
- * @since      3.7
+ * @copyright  (c) 2017-2019 Libor Gabaj
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @since      3.8
  */
 
 // No direct access
 defined('_JEXEC') or die;
 
+use Joomla\String\Normalise;
+
 /**
  * Methods handling the record of a codebook.
  *
- * @since  3.7
+ * @since  3.8
  */
 class GbjcodesModelCodebook extends GbjSeedModelAdmin
 {
@@ -28,7 +30,7 @@ class GbjcodesModelCodebook extends GbjSeedModelAdmin
 		parent::prepareTable($table);
 
 		// Clean and pluralize table root
-		$table->alias = Helper::plural(JStringWrapperNormalise::toKey($table->alias));
+		$table->alias = Helper::plural(Normalise::toKey($table->alias));
 
 		if ($table->id)
 		{
@@ -42,7 +44,18 @@ class GbjcodesModelCodebook extends GbjSeedModelAdmin
 
 			if ($oldTable !== $newTable)
 			{
-				$this->getDbo()->renameTable($oldTable, $newTable);
+				try
+				{
+					$this->getDbo()->renameTable($oldTable, $newTable);
+				}
+				catch (RuntimeException $e)
+				{
+					// Other than ER_NO_SUCH_TABLE
+					if ($e->getCode() <> 1146)
+					{
+						$app->enqueueMessage($e->getMessage(), 'warning');
+					}
+				}
 			}
 		}
 	}

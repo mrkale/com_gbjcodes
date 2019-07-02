@@ -1,9 +1,9 @@
 <?php
 /**
  * @package    Joomla.Component
- * @copyright  (c) 2017 Libor Gabaj. All rights reserved.
- * @license    GNU General Public License version 2 or later. See LICENSE.txt, LICENSE.php.
- * @since      3.7
+ * @copyright  (c) 2017-2018 Libor Gabaj
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @since      3.8
  */
 
 // No direct access
@@ -12,14 +12,12 @@ defined('_JEXEC') or die;
 /**
  * View for handling records of codebook.
  *
- * @since  3.7
+ * @since  3.8
  */
 class GbjcodesViewCodes extends GbjSeedViewList
 {
 	/**
 	 * Method to create the toolbar for handling agenda records.
-	 *
-	 * @param   array $blackList List of toolbar items to be ignored.
 	 *
 	 * @return  void
 	 */
@@ -28,4 +26,5 @@ class GbjcodesViewCodes extends GbjSeedViewList
 		$this->toolbarBlackList[] = 'batch';
 		parent::addToolbar();
 	}
+
 }

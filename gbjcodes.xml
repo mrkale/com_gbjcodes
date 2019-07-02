@@ -1,78 +1,65 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<!--
-@package     Joomla.Component
-@copyright   (c) 2017 Libor Gabaj. All rights reserved.
-@license     GNU General Public License version 2 or later. See LICENSE.txt, LICENSE.php.
-@since       3.7
--->
-<extension version="3.7" type="component" method="upgrade">
-    <name>COM_GBJCODES</name>
-    <version>2.0.0</version>
-    <creationDate>June 2017</creationDate>
-    <description>COM_GBJCODES_XML_DESC</description>
-    <author>Libor Gabaj</author>
-    <authorEmail>libor.gabaj@gmail.com</authorEmail>
-    <authorUrl>n/a</authorUrl>
-    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-    <copyright>(C) 2017, Libor Gabaj. All rights reserved.</copyright>
+<extension version="3.8" type="component" method="upgrade">
+	<name>COM_GBJCODES</name>
+	<version>2.0.0</version>
+	<creationDate>June 2019</creationDate>
+	<description>COM_GBJCODES_XML_DESC</description>
+	<author>Libor Gabaj</author>
+	<authorEmail>libor.gabaj@gmail.com</authorEmail>
+	<authorUrl>https://github.com/mrkaleJoomla/com_gbjcodes.git</authorUrl>
+	<license>GNU GPLv2 or later</license>
+	<copyright>(c) 2017-2019, Libor Gabaj</copyright>
 
-    <scriptfile>script.php</scriptfile>
+	<scriptfile>script.php</scriptfile>
 
-    <install>
-        <sql>
-            <file charset="utf8" driver="mysql">sql/install.mysql.utf8.sql</file>
-        </sql>
-    </install>
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
 
-    <uninstall>
-        <sql>
-            <file charset="utf8" driver="mysql">sql/uninstall.mysql.utf8.sql</file>
-        </sql>
-    </uninstall>
+	<uninstall>
+	<sql>
+		<file charset="utf8" driver="mysql">sql/uninstall.mysql.utf8.sql</file>
+	</sql>
+	</uninstall>
 
-    <update folder="admin">
-        <schemas>
-            <schemapath type="mysql">sql/update</schemapath>
-        </schemas>
-    </update>
+        <files folder="site">
+		<filename>gbjcodes.php</filename>
+		<filename>controller.php</filename>
+		<folder>controllers</folder>
+		<folder>language</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
 
-    <files folder="site">
-        <filename>gbjcodes.php</filename>
-        <filename>controller.php</filename>
-        <folder>controllers</folder>
-        <folder>language</folder>
-        <folder>models</folder>
-        <folder>views</folder>
-    </files>
+	<media destination="com_gbjcodes" folder="media">
+		<folder>css</folder>
+	</media>
 
-    <media destination="com_gbjcodes" folder="media">
-        <filename>index.html</filename>
-        <folder>css</folder>
-    </media>
+	<administration>
+		<menu
+			link="option=com_gbjcodes&amp;view=codebooks"
+			view="codebooks"
+			img="class:categories"
+			alt="GbjCodes"
+			>
+			COM_GBJCODES_MENU
+		</menu>
 
-    <administration>
-        <menu
-            link="option=com_gbjcodes&amp;view=codebooks"
-            view="codebooks"
-            img="class:categories"
-            alt="GbjCodes"
-        >
-            COM_GBJCODES_MENU
-        </menu>
+		<files folder="admin">
+			<filename>gbjcodes.php</filename>
+			<filename>controller.php</filename>
+			<filename>config.xml</filename>
+			<filename>access.xml</filename>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>language</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
 
-        <files folder="admin">
-            <filename>gbjcodes.php</filename>
-            <filename>controller.php</filename>
-            <filename>config.xml</filename>
-            <filename>access.xml</filename>
-            <folder>controllers</folder>
-            <folder>helpers</folder>
-            <folder>language</folder>
-            <folder>models</folder>
-            <folder>sql</folder>
-            <folder>tables</folder>
-            <folder>views</folder>
-        </files>
-
-    </administration>
+	</administration>
 </extension>

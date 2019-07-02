@@ -1,9 +1,9 @@
 <?php
 /**
  * @package    Joomla.Component
- * @copyright  (c) 2017 Libor Gabaj. All rights reserved.
- * @license    GNU General Public License version 2 or later. See LICENSE.txt, LICENSE.php.
- * @since      3.7
+ * @copyright  (c) 2017-2019 Libor Gabaj
+ * @license    GNU General Public License version 2 or later; see LICENSE.txt
+ * @since      3.8
  */
 
 // No direct access
@@ -12,6 +12,7 @@ defined('_JEXEC') or die;
 JHtml::_('bootstrap.tooltip');
 
 $viewName = $this->getName();
+$viewEdit = Helper::singular($this->getName());
 $user = JFactory::getUser();
 $layoutBasePath = Helper::getLayoutBase();
 
@@ -32,7 +33,7 @@ $cparams = JComponentHelper::getParams($componentName);
 <?php if ($this->total > 0) : ?>
 	<table class="table table-striped" id="recordList">
 		<?php if ($cparams->get('show_filter_stats')) : ?>
-		<caption style="text-align: left"><?php echo JText::_('LIB_GBJ_FILTER_COUNT_LABEL') . $this->pagination->total; ?></caption>
+			<caption style="text-align: left"><?php echo $this->htmlStatistics(); ?></caption>
 		<?php endif; ?>
 		<thead>
 			<tr>
