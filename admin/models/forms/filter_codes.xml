@@ -33,11 +33,11 @@
             <option value="featured ASC">JFEATURED_ASC</option>
             <option value="featured DESC">JFEATURED_DESC</option>
             <option value="title ASC">LIB_GBJ_HEADING_TITLE_ASC</option>
-            <option value="title DESC">LIB_GBJ_HEADING_TITLE_DESC</option>
+            <option value="title DESC">LIB_GBJ_HEADING_TITLE_DSC</option>
             <option value="alias ASC">LIB_GBJ_HEADING_ALIAS_ASC</option>
-            <option value="alias DESC">LIB_GBJ_HEADING_ALIAS_DESC</option>
+            <option value="alias DESC">LIB_GBJ_HEADING_ALIAS_DSC</option>
             <option value="modified ASC">LIB_GBJ_HEADING_MODIFIED_ASC</option>
-            <option value="modified DESC">LIB_GBJ_HEADING_MODIFIED_DESC</option>
+            <option value="modified DESC">LIB_GBJ_HEADING_MODIFIED_DSC</option>
             <option value="id ASC">JGRID_HEADING_ID_ASC</option>
             <option value="id DESC">JGRID_HEADING_ID_DESC</option>
         </field>
