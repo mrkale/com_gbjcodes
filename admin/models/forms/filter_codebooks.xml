@@ -44,13 +44,13 @@
             <option value="featured ASC">JFEATURED_ASC</option>
             <option value="featured DESC">JFEATURED_DESC</option>
             <option value="title ASC">LIB_GBJ_HEADING_TITLE_ASC</option>
-            <option value="title DESC">LIB_GBJ_HEADING_TITLE_DESC</option>
+            <option value="title DESC">LIB_GBJ_HEADING_TITLE_DSC</option>
             <option value="alias ASC">COM_GBJCODES_HEADING_CODEBOOK_ALIAS_ASC</option>
-            <option value="alias DESC">COM_GBJCODES_HEADING_CODEBOOK_ALIAS_DESC</option>
+            <option value="alias DESC">COM_GBJCODES_HEADING_CODEBOOK_ALIAS_DSC</option>
             <option value="modified ASC">LIB_GBJ_HEADING_MODIFIED_ASC</option>
-            <option value="modified DESC">LIB_GBJ_HEADING_MODIFIED_DESC</option>
+            <option value="modified DESC">LIB_GBJ_HEADING_MODIFIED_DSC</option>
             <option value="codes ASC">COM_GBJCODES_HEADING_CODEBOOK_CODES_ASC</option>
-            <option value="codes DESC">COM_GBJCODES_HEADING_CODEBOOK_CODES_DESC</option>
+            <option value="codes DESC">COM_GBJCODES_HEADING_CODEBOOK_CODES_DSC</option>
         </field>
 
         <field
