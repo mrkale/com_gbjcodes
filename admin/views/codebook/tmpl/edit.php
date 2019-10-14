@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    Joomla.Component
- * @copyright  (c) 2017-2018 Libor Gabaj
+ * @copyright  (c) 2017-2019 Libor Gabaj
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  * @since      3.8
  */
@@ -30,10 +30,7 @@ $tabNameActive = $tabNameDetails;
 	<div class="form-horizontal">
 		<?php echo JHtml::_('bootstrap.startTabSet', $tabSetName, array('active' => $tabNameActive)); ?>
 
-		<?php echo JHtml::_('bootstrap.addTab', $tabSetName, $tabNameDetails,
-			empty($this->item->id) ? JText::_('LIB_GBJ_NEW_RECORD') : JText::sprintf('LIB_GBJ_OLD_RECORD', $this->item->id)
-			);
-		?>
+		<?php echo JHtml::_('bootstrap.addTab', $tabSetName, $tabNameDetails, $this->getTabRecord()); ?>
 		<div class="row-fluid form-horizontal-desktop">
 			<div class="span9">
 			<?php echo $this->form->renderField('description'); ?>
