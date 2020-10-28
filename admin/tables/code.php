@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    Joomla.Component
- * @copyright  (c) 2017 Libor Gabaj
+ * @copyright  (c) 2017-2020 Libor Gabaj
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  * @since      3.8
  */
@@ -19,7 +19,7 @@ class GbjcodesTableCode extends GbjSeedTable
 	/**
 	 * Constructor.
 	 *
-	 * @param   pointer  &$db  Pointer to the current database object.
+	 * @param   pointer  $db  Pointer to the current database object.
 	 */
 	public function __construct(&$db)
 	{

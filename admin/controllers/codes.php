@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    Joomla.Component
- * @copyright  (c) 2017-2018 Libor Gabaj
+ * @copyright  (c) 2017-2020 Libor Gabaj
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  * @since      3.8
  */
@@ -18,13 +18,13 @@ use Joomla\String\Normalise;
  */
 class GbjcodesControllerCodes extends GbjSeedControllerAdmin
 {
-    /**
-     * Method to leave the current agenda and return to parent view
-     *
-     * @return  void
-     */
-    public function enterCodebooks()
-    {
+	/**
+	 * Method to leave the current agenda and return to parent view
+	 *
+	 * @return  void
+	 */
+	public function enterCodebooks()
+	{
 		$this->enterAgendaParent(__FUNCTION__);
-    }
+	}
 }

@@ -1,7 +1,7 @@
 <?php
 /**
  * @package    Joomla.Component
- * @copyright  (c) 2017 Libor Gabaj
+ * @copyright  (c) 2017-2020 Libor Gabaj
  * @license    GNU General Public License version 2 or later; see LICENSE.txt
  * @since      3.8
  */
@@ -16,13 +16,13 @@ defined('_JEXEC') or die;
  */
 class Helper extends GbjHelpersCommon
 {
-    // Default view
-    const HELPER_DEFAULT_VIEW = 'codebooks';
+	// Default view
+	const HELPER_DEFAULT_VIEW = 'codebooks';
 
-    /**
-     * List of views in the side bar sub menu
-     *
-     * @var type array
-     */
-    protected static $helperViewsInSubmenu = ['codebooks'];
+	/**
+	 * List of views in the side bar sub menu
+	 *
+	 * @var type array
+	 */
+	protected static $helperViewsInSubmenu = array('codebooks');
 }

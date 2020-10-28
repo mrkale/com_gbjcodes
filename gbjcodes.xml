@@ -1,14 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
+<!--
+@package     Joomla.Component
+@copyright   (c) 2017-2020 Libor Gabaj
+@license     GNU General Public License version 2 or later; see LICENSE.txt
+@since       3.8
+-->
 <extension version="3.8" type="component" method="upgrade">
     <name>COM_GBJCODES</name>
-    <version>2.0.0</version>
-    <creationDate>June 2019</creationDate>
+    <version>2.1.0</version>
+    <creationDate>October 2020</creationDate>
     <description>COM_GBJCODES_XML_DESC</description>
     <author>Libor Gabaj</author>
     <authorEmail>libor.gabaj@gmail.com</authorEmail>
     <authorUrl>https://github.com/mrkaleJoomla/com_gbjcodes.git</authorUrl>
     <license>GNU GPLv2 or later</license>
-    <copyright>(c) 2017-2019, Libor Gabaj</copyright>
+    <copyright>(c) 2017-2020, Libor Gabaj</copyright>
 
     <scriptfile>script.php</scriptfile>
 
@@ -35,6 +41,7 @@
 
     <media destination="com_gbjcodes" folder="media">
         <folder>css</folder>
+				<folder>js</folder>
     </media>
 
     <administration>
